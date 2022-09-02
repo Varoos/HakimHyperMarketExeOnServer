@@ -1,0 +1,27 @@
+﻿1.HakimHyperMarketExeOnServer.dll
+2.HakimHyperMarketExeOnServer.dll.config
+
+Copy the dlls in C:\inetpub\wwwroot\Focus.Transactions.Web\bin
+and  C:\inetpub\wwwroot\Focus8w\bin
+and C:\Program Files (x86)\Focus Softnet\Focus8
+and C:\inetpub\wwwroot\Focus.Pos.Web\bin
+
+ POS Configuration
+ ====================
+ Go To  POS Comminication
+ OnEvent     : For Bill Printing
+ Module Type : dll
+ Module Name : HakimHyperMarketExeOnServer.dll
+ Class Name  : ClsExecuteonServer
+ FunctionName :POSSalesNew
+
+
+
+ Note: Please provide the fields in Dll Config file
+   --> Server_API_IP,UserName,Password ==> these fields are for fetching the Session. So Mandatory to provide the details
+
+   --> FieldId ==> As we cant fetch the field id . So please run the query as given and provide the FieldId in App.Config file.
+   
+Query for Field Id:
+------------------------------
+"select * from cCore_VoucherFields_0 where sFieldName = 'FBRInvNo' and iVoucherType=3331"
